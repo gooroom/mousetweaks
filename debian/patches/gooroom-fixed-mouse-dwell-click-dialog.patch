@@ -1,0 +1,73 @@
+From 6b848ef02dba0a9604ab001d78108f6fc6c8cc62 Mon Sep 17 00:00:00 2001
+From: JeongHaeRyong <jeong89@gooroom.kr>
+Date: Wed, 18 Mar 2020 11:29:41 +0900
+Subject: [PATCH] gooroom
+
+Change-Id: I169c74192d2eb35530514d882f91e2018b8f172e
+---
+ po/ko.po      | 6 +++---
+ src/mt-ctw.c  | 3 +++
+ src/mt-main.c | 2 --
+ 3 files changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/po/ko.po b/po/ko.po
+index 4b41f25..ba23db7 100644
+--- a/po/ko.po
++++ b/po/ko.po
+@@ -40,7 +40,7 @@ msgstr "끌기"
+ 
+ #: ../data/mousetweaks.ui.h:6
+ msgid "Secondary Click"
+-msgstr "두번째 누르기"
++msgstr "오른쪽 누르기"
+ 
+ #: ../data/mousetweaks.ui.h:7
+ msgid "Button Style"
+@@ -104,7 +104,7 @@ msgstr "자동 누르기 사용"
+ 
+ #: ../src/mt-main.c:625
+ msgid "Enable simulated secondary click"
+-msgstr "두번째 누르기 흉내 내기 사용"
++msgstr "오른쪽 누르기 흉내 내기 사용"
+ 
+ #: ../src/mt-main.c:627
+ msgid "Time to wait before a dwell click"
+@@ -112,7 +112,7 @@ msgstr "자동 누르기가 될 때까지 대기할 시간"
+ 
+ #: ../src/mt-main.c:629
+ msgid "Time to wait before a simulated secondary click"
+-msgstr "두번째 누르기로 취급할 때까지 대기할 시간"
++msgstr "오른쪽 누르기로 취급할 때까지 대기할 시간"
+ 
+ #: ../src/mt-main.c:631
+ msgid "Set the active dwell mode"
+diff --git a/src/mt-ctw.c b/src/mt-ctw.c
+index 4f13454..3fab800 100644
+--- a/src/mt-ctw.c
++++ b/src/mt-ctw.c
+@@ -241,6 +241,9 @@ mt_ctw_init (void)
+                           NULL);
+     }
+ 
++    /* set hide on delete window */
++    g_signal_connect (ctw, "delete-event", G_CALLBACK (gtk_widget_hide_on_delete), NULL);
++
+     /* service */
+     service = mt_service_get_default ();
+     g_signal_connect (service, "notify::click-type",
+diff --git a/src/mt-main.c b/src/mt-main.c
+index 4502dbb..f9d7cae 100644
+--- a/src/mt-main.c
++++ b/src/mt-main.c
+@@ -397,8 +397,6 @@ mt_dwell_click_cancel (MtData *mt)
+         mt_main_set_cursor (mt, GDK_LEFT_PTR);
+         mt->dwell_drag_started = FALSE;
+     }
+-
+-    mt_service_set_click_type (mt->service, MT_DWELL_CLICK_TYPE_SINGLE);
+ }
+ 
+ static void
+-- 
+2.20.1
+
