@@ -1,3 +1,12 @@
+mousetweaks (3.12.0-5+grm2u1) unstable; urgency=medium
+
+  [ JeongHaeRyong ]
+  * [36e4ef5b] [Bug:2035,2052] Fixed blank showing dialog when activing secondary clicked. Fixed dwell toggled event.
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 07 Jul 2020 15:53:24 +0900
+
 mousetweaks (3.12.0-5) unstable; urgency=medium
 
   * Build-Depend on debhelper-compat 12 and drop debian/compat
