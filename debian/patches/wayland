@@ -1,0 +1,39 @@
+https://gitlab.gnome.org/GNOME/mousetweaks/-/merge_requests/3
+
+From 0055d77628ab1d249e890a5afeaecd6c31ce8c32 Mon Sep 17 00:00:00 2001
+From: Peter Keresztes Schmidt <carbenium@outlook.com>
+Date: Mon, 5 Aug 2019 19:02:50 +0200
+Subject: [PATCH] main: Check if we are running under X11
+
+Calls to X11 functions when running under Wayland lead to SIGSEVS.
+Abort gracefully if we are not running under X11.
+
+Example stacktrace:
+
+0  0x00007fa7679c203d in XQueryExtension () at /lib64/libX11.so.6
+1  0x00007fa767969fb7 in  () at /lib64/libXtst.so.6
+2  0x00007fa76796a166 in XTestQueryExtension () at /lib64/libXtst.so.6
+3  0x000055d422d5aea3 in  ()
+4  0x00007fa7677a0f33 in __libc_start_main () at /lib64/libc.so.6
+5  0x000055d422d5b32e in  ()
+---
+ src/mt-main.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/src/mt-main.c b/src/mt-main.c
+index 01c7932..6af9ce1 100644
+--- a/src/mt-main.c
++++ b/src/mt-main.c
+@@ -576,6 +576,12 @@ mt_data_init (void)
+     mt = g_slice_new0 (MtData);
+     dpy = mt_common_get_xdisplay ();
+ 
++    if (!GDK_IS_X11_DISPLAY (dpy))
++    {
++        g_critical ("Not running under X11. Aborting.");
++	return NULL;
++    }
++
+     if (!XTestQueryExtension (dpy, &nil, &nil, &nil, &nil))
+     {
+         g_slice_free (MtData, mt);

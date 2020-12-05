@@ -1,0 +1,252 @@
+mousetweaks (3.32.0-3) unstable; urgency=medium
+
+  * patches/wayland: warn that it does not work under wayland (instead of
+    crashing) (Closes: #956523).
+  * watch: Generalize pattern.
+  * control: Update alioth list domain.
+  * rules: Drop now-default -Wl,--as-needed option
+  * control: Bump Standards-Version to 4.5.0 (no change)
+
+ -- Samuel Thibault <sthibault@debian.org>  Sat, 05 Dec 2020 16:43:45 +0100
+
+mousetweaks (3.32.0-2) unstable; urgency=medium
+
+  * Build-Depend on dh-sequence-gnome instead of gnome-pkg-tools
+  * Bump Standards-Version to 4.4.0
+  * Upload to unstable
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 28 Sep 2019 09:16:16 -0400
+
+mousetweaks (3.32.0-1) experimental; urgency=medium
+
+  * New upstream release
+  * Drop obsolete Build-Depends on gnome-common (Closes: #829778)
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 16 Mar 2019 09:55:37 -0400
+
+mousetweaks (3.31.90-1) experimental; urgency=medium
+
+  * New upstream release
+  * Drop obsolete Build-Depends on intltool
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 04 Feb 2019 08:49:24 -0500
+
+mousetweaks (3.12.0-5) unstable; urgency=medium
+
+  * Build-Depend on debhelper-compat 12 and drop debian/compat
+  * Update Vcs fields for migration to https://salsa.debian.org/
+  * Add -Wl,-O1 to our LDFLAGS
+  * Bump Standards-Version to 4.3.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 27 Dec 2018 11:02:47 -0500
+
+mousetweaks (3.12.0-4) unstable; urgency=medium
+
+  * Update Vcs fields for conversion to git
+  * Add debian/gbp.conf
+  * Bump Standards-Version to 4.1.2
+  * Add Debian Accessibility Team to Uploaders
+  * Bump debhelper compat to 11
+  * Build with all hardening flags
+
+ -- Jeremy Bicha <jbicha@debian.org>  Wed, 20 Dec 2017 14:02:52 -0500
+
+mousetweaks (3.12.0-3) unstable; urgency=medium
+
+  * Drop Recommends: gnome-control-center since the dependency is unneded
+    and mousetweaks is used by other desktop environments.
+  * Bump Standards-Version to 4.1.1
+
+ -- Jeremy Bicha <jbicha@debian.org>  Fri, 24 Nov 2017 22:41:37 -0500
+
+mousetweaks (3.12.0-2) unstable; urgency=medium
+
+  * Switch from cdbs to dh
+  * Add debian/docs to explicitly install NEWS and README
+  * Bump debhelper compat to 10
+  * debian/rules:
+    - Add 'export LC_ALL=C.UTF-8' to fix FTBFS on Debian buildds
+      (Closes: #871136)
+  * Bump Standards-Version to 4.1.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 07 Sep 2017 08:29:31 -0400
+
+mousetweaks (3.12.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Mon, 24 Mar 2014 20:44:52 +0100
+
+mousetweaks (3.10.0-1) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * Bump dh compat to 9
+  * debian/control.in:
+    - Update homepage
+    - Drop obsolete gnome-doc-utils and scrollkeeper build dependencies
+
+  [ Jackson Doak ]
+  * New upstream release
+
+  [ Laurent Bigonville ]
+  * debian/control.in: Bump Standards-Version to 3.9.5 (no further changes)
+
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 16 Feb 2014 20:30:31 +0100
+
+mousetweaks (3.8.0-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release.
+  * Bump Standards-Version to 3.9.4
+
+ -- Andreas Henriksson <andreas@fatal.se>  Fri, 24 May 2013 14:15:12 +0200
+
+mousetweaks (3.4.2-1) unstable; urgency=low
+
+  * New upstream translation release.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 15 May 2012 20:05:55 +0200
+
+mousetweaks (3.4.1-1) unstable; urgency=low
+
+  * New upstream translation release.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 16 Apr 2012 17:55:18 +0200
+
+mousetweaks (3.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update Vcs-* URLs.
+  * Bump Standards-Version to 3.9.3.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 01 Apr 2012 02:24:50 +0200
+
+mousetweaks (3.2.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/watch:
+    - Track .xz tarballs.
+
+ -- Michael Biebl <biebl@debian.org>  Wed, 19 Oct 2011 02:07:26 +0200
+
+mousetweaks (3.2.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - Disable panel applets by default for GNOME 3. Closes: #638088
+  * debian/watch: Switch to .bz2 tarballs.
+  * Switch to dpkg source format 3.0 (quilt).
+  * Bump Standards-Version to 3.9.2. No further changes.
+  * Bump debhelper compatibility level to 8.
+  * debian/control.in:
+    - Small format fixes.
+    - Add Homepage: field.
+    - Add Depends on gsettings-desktop-schemas (>= 0.1.0).
+  * Update build dependencies:
+    - Drop libgconf2-dev, libpanel-applet2-dev, libatspi-dev and
+      libdbus-glib-1-dev.
+    - Update libgtk2.0-dev to libgtk-3-dev (>= 3.0.0).
+    - Add libglib2.0-dev (>= 2.25.3) and
+      gsettings-desktop-schemas-dev (>= 0.1.0).
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 08 Oct 2011 05:28:38 +0200
+
+mousetweaks (2.30.2-1) unstable; urgency=low
+
+  * New upstream translation release. This new Czech manual must be
+    really nice to be worth a bug. Closes: #587659.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 02 Jul 2010 20:34:41 +0200
+
+mousetweaks (2.30.1-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Wed, 05 May 2010 17:18:02 +0200
+
+mousetweaks (2.30.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Josselin Mouette <joss@debian.org>  Tue, 13 Apr 2010 20:53:06 +0200
+
+mousetweaks (2.28.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 18 Dec 2009 14:04:34 +0100
+
+mousetweaks (2.28.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control.in:
+    - bumped standards-version to 3.8.3. No changes needed.
+    - added Vcs-* fields.
+
+ -- Andrea Veri <andrea.veri89@gmail.com>  Sun, 25 Oct 2009 18:33:39 +0100
+
+mousetweaks (2.28.0-1) unstable; urgency=low
+
+  [ Emilio Pozuelo Monfort ]
+  * Add a watch file.
+
+  [ Josselin Mouette ]
+  * New upstream release.
+  * Make build-dependencies up-to-date.
+  * Update GFDL version in the copyright.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 25 Sep 2009 00:01:35 +0200
+
+mousetweaks (2.26.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Drop build-dependency on libglade.
+
+ -- Josselin Mouette <joss@debian.org>  Tue, 09 Jun 2009 19:46:39 +0200
+
+mousetweaks (2.24.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Pass --disable-scrollkeeper to configure.
+
+ -- Josselin Mouette <joss@debian.org>  Thu, 05 Mar 2009 17:54:11 +0100
+
+mousetweaks (2.24.2-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Josselin Mouette <joss@debian.org>  Sun, 04 Jan 2009 13:35:48 +0100
+
+mousetweaks (2.24.1-2) experimental; urgency=low
+
+  * Build-depend on scrollkeeper. Closes: #506633, #506642.
+
+ -- Josselin Mouette <joss@debian.org>  Sun, 23 Nov 2008 17:08:49 +0100
+
+mousetweaks (2.24.1-1) experimental; urgency=low
+
+  * New upstream release.
+  * Bump build-dependencies accordingly.
+  * Pass -z defs -O1 --as-needed to the linker.
+  * Fix Engrish in the description. Closes: #501963.
+
+ -- Josselin Mouette <joss@debian.org>  Sat, 22 Nov 2008 16:26:13 +0100
+
+mousetweaks (2.22.3-1) unstable; urgency=low
+
+  * New upstream translation release.
+  * Standards version is 3.8.0; no changes required.
+
+ -- Josselin Mouette <joss@debian.org>  Mon, 21 Jul 2008 17:24:06 +0200
+
+mousetweaks (2.22.2-2) unstable; urgency=low
+
+  * Brown paper bag upload.
+  * Add missing build-depend on gnome-doc-utils. Closes: #487356.
+
+ -- Josselin Mouette <joss@debian.org>  Sat, 21 Jun 2008 10:35:03 +0200
+
+mousetweaks (2.22.2-1) unstable; urgency=low
+
+  * Initial release. Closes: #486320.
+
+ -- Josselin Mouette <joss@debian.org>  Sun, 15 Jun 2008 12:44:55 +0200
