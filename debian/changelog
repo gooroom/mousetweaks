@@ -1,3 +1,12 @@
+mousetweaks (3.12.0-5+grm2u2) unstable; urgency=medium
+
+  [ heejun.jang ]
+  * [ded988db] [Bug:3078]Added mouse dwell click dialog headerbar
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Thu, 01 Apr 2021 12:31:37 +0900
+
 mousetweaks (3.12.0-5+grm2u1) unstable; urgency=medium
 
   [ JeongHaeRyong ]
