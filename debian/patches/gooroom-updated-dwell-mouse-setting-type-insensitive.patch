@@ -1,0 +1,20 @@
+diff --git a/data/mousetweaks.ui b/data/mousetweaks.ui
+index 89ec5ba..5426fae 100644
+--- a/data/mousetweaks.ui
++++ b/data/mousetweaks.ui
+@@ -252,6 +252,7 @@
+         <property name="visible">True</property>
+         <property name="can_focus">False</property>
+         <property name="use_action_appearance">False</property>
++        <property name="sensitive">False</property>
+         <property name="label" translatable="yes">Button Style</property>
+       </object>
+     </child>
+@@ -290,6 +291,7 @@
+         <property name="visible">True</property>
+         <property name="can_focus">False</property>
+         <property name="use_action_appearance">False</property>
++        <property name="sensitive">False</property>
+         <property name="label" translatable="yes">Orientation</property>
+       </object>
+     </child>
