@@ -1,3 +1,12 @@
+mousetweaks (3.12.0-5+grm2u3) unstable; urgency=medium
+
+  [ heejun.jang ]
+  * [fe475864] [Bug:3404]Updated dwell mouse setting type insensitive
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 13 Apr 2021 18:08:16 +0900
+
 mousetweaks (3.12.0-5+grm2u2) unstable; urgency=medium
 
   [ heejun.jang ]
