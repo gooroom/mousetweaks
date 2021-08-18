@@ -1,3 +1,17 @@
+Version 3.32.0
+--------------
+- New stable release
+
+Version 3.31.92
+--------------
+- Stop using gnome-common
+- Translation updates
+
+Version 3.31.90
+--------------
+- Stop using intltool
+- Translation updates
+
 Version 3.12.0
 --------------
 
