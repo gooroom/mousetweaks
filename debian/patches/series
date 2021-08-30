@@ -1,3 +1,4 @@
 wayland
 gooroom-fixed-mouse-dwell-click-dialog.patch
 gooroom-added-mouse-dwell-click-dialog-headerbar.patch
+gooroom-updated-dwell-mouse-setting-type-insensitive.patch
