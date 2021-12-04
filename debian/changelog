@@ -1,3 +1,12 @@
+mousetweaks (3.32.0-3+grm3u1) unstable; urgency=medium
+
+  [ heejun.jang ]
+  * [60061ee1] [Bug:2035,2052]Fixed blank showing dialog when activing secondary clicked. Fixed dwell toggled event.
+  * [96a3b669] [Bug:3078]Added mouse dwell click dialog headerbar
+  * [2c31c958] [Bug:3404]Updated dwell mouse setting type insensitive
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Sat, 04 Dec 2021 21:02:15 +0900
+
 mousetweaks (3.32.0-3) unstable; urgency=medium
 
   * patches/wayland: warn that it does not work under wayland (instead of
